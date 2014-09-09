@@ -1,0 +1,37 @@
+<style media="screen" type="text/css">
+  body.logged_out #login .form-horizontal.control-group { border:none; }
+</style>
+
+<h2><%= nls(:signup_title) %></h2>
+
+<% resource.user_profile || resource.build_user_profile %>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'form-horizontal' }, wrapper: :bs3_horizontal_nosize) do |f| %>
+  <%= field_set_tag  do %>
+    <%= devise_error_messages! %>
+
+    <%= f.input :email,                 label: nls(:signup_email),            required: true, label_html: {class: 'col-sm-4'}, input_wrapper_html: {class: 'col-sm-6'} %>
+    <%= f.input :password,              label: nls(:signup_password),         required: true, label_html: {class: 'col-sm-4'}, input_wrapper_html: {class: 'col-sm-6'} %>
+    <%= f.input :password_confirmation, label: nls(:signup_password_confirm), required: true, label_html: {class: 'col-sm-4'}, input_wrapper_html: {class: 'col-sm-6'} %>
+
+    <%= f.fields_for :user_profile, resource.user_profile, wrapper: :bs3_horizontal_nosize do |builder| %>
+      <%= builder.input :public_name, label: nls(:signup_public_name), required: true, hint: nls(:signup_public_name_hint), label_html: {class: 'col-sm-4'}, input_wrapper_html: {class: 'col-sm-6'} %>
+      <hr />
+      <% if I18n.locale == :ja %>
+        <%= builder.input :last_name,  label: nls(:signup_last_name),  required: true, label_html: {class: 'col-sm-4'}, input_wrapper_html: {class: 'col-sm-6'} %>
+        <%= builder.input :first_name, label: nls(:signup_first_name), required: true, label_html: {class: 'col-sm-4'}, input_wrapper_html: {class: 'col-sm-6'} %>
+      <% else %>
+        <%= builder.input :first_name, label: nls(:signup_first_name), required: true, label_html: {class: 'col-sm-4'}, input_wrapper_html: {class: 'col-sm-6'} %>
+        <%= builder.input :last_name,  label: nls(:signup_last_name),  required: true, label_html: {class: 'col-sm-4'}, input_wrapper_html: {class: 'col-sm-6'} %>
+      <% end %>
+      <%= builder.input :country_id, collection: ut_country_select_collection(false), label: nls(:signup_country), required: true, label_html: {class: 'col-sm-4'}, input_wrapper_html: {class: 'col-sm-6'} %>
+    <% end %>
+
+    <div class="form-group">
+      <div class='col-sm-offset-4 col-sm-6'>
+        <%= f.button :submit, nls(:signup_register_button), class: 'btn-primary' %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+<%= render "links" %>

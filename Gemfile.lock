@@ -1,15 +1,45 @@
 GIT
-  remote: git://github.com/digitalmoksha/dm_cms.git
-  revision: aaa74082f2777ddce607888e0a79952360dbfc7e
+  remote: git://github.com/digitalmoksha/preferences.git
+  revision: 5dbda1dc48dc3887ccdac2e0cce73d60bb8e8161
+  specs:
+    preferences (0.5.4)
+
+GIT
+  remote: git://github.com/digitalmoksha/rails-bootstrap-helpers.git
+  revision: 98bc0458f864be3f21f1a53f1a265b15f9e0e883
+  specs:
+    rails-bootstrap-helpers (0.1.0)
+      rails (>= 3.2.11)
+
+GIT
+  remote: git://github.com/digitalmoksha/themes_for_rails.git
+  revision: a104e52fd8a7b5c42bd9d689b753390c54f2593f
+  specs:
+    themes_for_rails (0.5.2)
+      rails (>= 3.2.0)
+
+PATH
+  remote: /Users/walkerbl/Sites/In_Development/_github/_moksha_gems/admin_theme_londinium
+  specs:
+    admin_theme_londinium (0.0.1)
+      rails (~> 4.0)
+
+PATH
+  remote: /Users/walkerbl/Sites/In_Development/_github/_moksha_gems/dm_admin
+  specs:
+    dm_admin (0.0.1)
+      rails (~> 4.0)
+
+PATH
+  remote: /Users/walkerbl/Sites/In_Development/_github/_moksha_gems/dm_cms
   specs:
     dm_cms (0.4.0)
       mail_form (~> 1.5.0)
       meta-tags-helpers (~> 0.2.0)
       rails (~> 4.0)
 
-GIT
-  remote: git://github.com/digitalmoksha/dm_core.git
-  revision: f8466695cc7f0f01c8e4174a9d7bf2a4d19484ba
+PATH
+  remote: /Users/walkerbl/Sites/In_Development/_github/_moksha_gems/dm_core
   specs:
     dm_core (0.4.0)
       RedCloth (~> 4.2.9)
@@ -44,45 +74,10 @@ GIT
       simple_form (~> 3.1.0.rc2)
       will_paginate (~> 3.0.7)
 
-GIT
-  remote: git://github.com/digitalmoksha/dm_ruby_extensions.git
-  revision: 826c117333a09c16f58167ee6d52defa2b63a739
+PATH
+  remote: /Users/walkerbl/Sites/In_Development/_github/_moksha_gems/dm_ruby_extensions
   specs:
     dm_ruby_extensions (0.0.2)
-
-GIT
-  remote: git://github.com/digitalmoksha/preferences.git
-  revision: 5dbda1dc48dc3887ccdac2e0cce73d60bb8e8161
-  specs:
-    preferences (0.5.4)
-
-GIT
-  remote: git://github.com/digitalmoksha/rails-bootstrap-helpers.git
-  revision: 98bc0458f864be3f21f1a53f1a265b15f9e0e883
-  specs:
-    rails-bootstrap-helpers (0.1.0)
-      rails (>= 3.2.11)
-
-GIT
-  remote: git://github.com/digitalmoksha/themes_for_rails.git
-  revision: a104e52fd8a7b5c42bd9d689b753390c54f2593f
-  specs:
-    themes_for_rails (0.5.2)
-      rails (>= 3.2.0)
-
-GIT
-  remote: ssh://git@github.com/digitalmoksha/admin_theme_londinium.git
-  revision: af48b345ba63fc1d916b7df25e13d51dea8103d6
-  specs:
-    admin_theme_londinium (0.0.1)
-      rails (~> 4.0)
-
-GIT
-  remote: ssh://git@github.com/digitalmoksha/dm_admin.git
-  revision: ea23b8005a8356d915bd16669236bb21e2f8f6f1
-  specs:
-    dm_admin (0.0.1)
-      rails (~> 4.0)
 
 GEM
   remote: https://rubygems.org/
@@ -128,7 +123,9 @@ GEM
     ancestry (2.1.0)
       activerecord (>= 3.0.0)
     arel (5.0.1.20140414130214)
-    aws-sdk (1.51.0)
+    aws-sdk (1.52.0)
+      aws-sdk-v1 (= 1.52.0)
+    aws-sdk-v1 (1.52.0)
       json (~> 1.4)
       nokogiri (>= 1.4.4)
     babosa (0.3.11)
@@ -140,6 +137,8 @@ GEM
       activerecord (>= 3.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.2.0.1)
+      sass (~> 3.2)
     builder (3.2.2)
     byebug (3.2.0)
       columnize (~> 0.8)
@@ -168,7 +167,7 @@ GEM
       json (>= 1.7)
       mime-types (>= 1.16)
     chronic (0.10.2)
-    codemirror-rails (4.4)
+    codemirror-rails (4.5)
       railties (>= 3.0, < 5)
     coderay (1.1.0)
     coffee-rails (4.0.1)
@@ -390,11 +389,11 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   better_errors (~> 1.1.0)
   binding_of_caller
+  bootstrap-sass (~> 3.2.0)
   byebug
   capistrano (~> 3.2.1)
   capistrano-rails (~> 1.1.1)
   capybara (~> 2.4.1)
-  carrierwave (~> 0.10.0)
   coffee-rails (~> 4.0.1)
   database_cleaner (~> 1.0.1)
   dm_admin!
@@ -408,7 +407,6 @@ DEPENDENCIES
   jquery-ui-rails
   launchy (~> 2.4.2)
   meta_request
-  mini_magick (~> 3.8.0)
   mysql2 (>= 0.3.15)
   non-stupid-digest-assets
   preferences!

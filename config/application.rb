@@ -19,5 +19,26 @@ module MokshaCms
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    #--- set the layout for the devise controllers
+    config.to_prepare do
+      Devise::SessionsController.layout "devise"
+      Devise::RegistrationsController.layout "devise"
+      Devise::ConfirmationsController.layout "devise"
+      Devise::UnlocksController.layout "devise"
+      Devise::PasswordsController.layout "devise"
+    end
+  end
+end
+
+
+#------------------------------------------------------------------------------
+module AssetsInitializers
+  class Railtie < Rails::Railtie
+    initializer "assets_initializers.initialize_rails",
+                :group => :assets do |app|
+      require "#{Rails.root}/config/initializers/_themes_for_rails.rb"
+      require "#{Rails.root}/config/initializers/account_initialization.rb"
+    end
   end
 end

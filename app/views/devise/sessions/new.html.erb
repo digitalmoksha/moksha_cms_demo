@@ -1,0 +1,21 @@
+<h2><%= nls(:signin_title) %></h2>
+
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-horizontal' }, 
+        wrapper: :bs3_horizontal_nosize) do |f| %>
+  <%= devise_error_messages! %>
+  <%= field_set_tag do %>
+    <%= f.input :email,    label: nls(:signup_email),    required: true, label_html: {class: 'col-sm-4'}, input_wrapper_html: {class: 'col-sm-6'} %>
+    <%= f.input :password, label: nls(:signup_password), required: true, label_html: {class: 'col-sm-4'}, input_wrapper_html: {class: 'col-sm-6'} %>
+    <% if devise_mapping.rememberable? -%>
+      <%= f.input :remember_me, label: nls(:signin_rememberme), as: :boolean, input_wrapper_html: {class: 'col-sm-offset-4 col-sm-6'}, wrapper: :bs3_horizontal_nosize_boolean %>
+    <% end %>
+
+    <div class="form-group">
+      <div class='col-sm-offset-4 col-sm-6'>
+        <%= f.button :submit, nls(:signin_button), class: 'btn-primary' %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+<%= render "links" %>

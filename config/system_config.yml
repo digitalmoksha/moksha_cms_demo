@@ -1,0 +1,26 @@
+# Default system config values
+#------------------------------------------------------------------------------
+defaults: &defaults
+  app_name: "Moksha CMS"
+  base_domain: example.com
+  smtp_address: smtp.mandrillapp.com
+  smtp_port: 587
+  smtp_domain: example.com
+  smtp_user_name: "webmaster@example.com"
+  smtp_password: "some_password"
+  smtp_authentication: login
+  smtp_enable_starttls_auto: false
+  system_default_language: en
+  development_email: support@example.com
+  exception_emails_to: support@example.com
+
+development:
+  <<: *defaults
+  base_domain: dev.example.com
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+  smtp_enable_starttls_auto: true

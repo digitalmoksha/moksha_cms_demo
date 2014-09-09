@@ -1,0 +1,13 @@
+<ul>
+  <% if can? :access_admin, :all %>
+    <li><%= link_to "Dashboard", dm_core.admin_dashboard_path %></li>
+  <% end %>
+  <li>
+    <% if user_signed_in? %>
+      <%= link_to("#{current_user.email} : Logout", main_app.destroy_user_session_path, {:method => :delete}) %>
+    <% else %>
+      <%= link_to('Login', main_app.new_user_session_path) %></li>
+    <% end %>
+  </li>
+  <li><%= link_to nls_flag_image(:en), url_translate(:en), :title => 'English' %>&nbsp;&nbsp;&nbsp;<%= link_to nls_flag_image(:de), url_translate(:de), :title => "German" %></li> 
+</ul>

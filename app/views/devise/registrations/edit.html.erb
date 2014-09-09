@@ -1,0 +1,25 @@
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), method: :put, html: { class: 'form-horizontal' }, 
+        wrapper: :bs3_horizontal_nosize) do |f| %>
+  <%= devise_error_messages! %>
+  <%= field_set_tag do %>
+    <%= f.input :email,    label: nls(:signup_email),    required: true, label_html: {class: 'col-sm-4'}, input_wrapper_html: {class: 'col-sm-6'} %>
+    <%= f.input :password, label: nls(:signup_password), required: true, label_html: {class: 'col-sm-4'}, input_wrapper_html: {class: 'col-sm-6'},
+             hint: "leave blank if you don't want to change it" %>
+    <%= f.input :password_confirmation, label: nls(:signup_password_confirm), required: true, label_html: {class: 'col-sm-4'}, input_wrapper_html: {class: 'col-sm-6'} %>
+    <%= f.input :current_password, label: 'Current Password', required: true, label_html: {class: 'col-sm-4'}, input_wrapper_html: {class: 'col-sm-6'},
+             hint: "we need your current password to confirm your changes" %>
+
+    <div class="form-group">
+      <div class='col-sm-offset-4 col-sm-6'>
+        <%= f.button :submit, 'Update', class: 'btn-primary' %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="devise_links">
+  <%= link_to "Unhappy? Cancel my account", registration_path(resource_name), data: {confirm: "Are you sure?"}, method: :delete %><br />
+  <%= link_to "Back", :back %>
+</div>

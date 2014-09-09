@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title><%= main_title %></title>
+  <meta name="keywords" content="" />
+  <meta name="author" content="" />
+  <meta name="copyright" content="" />
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width">
+  <%= csrf_meta_tag %>
+  
+    <%= javascript_include_tag 'bootstrap_assets' %>
+
+    <%= stylesheet_link_tag 'bootstrap_assets' %>
+    <style type="text/css">
+      /* Override some defaults */
+      html, body { background-color: #eee;}
+      body { padding-top: 40px; }
+      .container { max-width: 500px; }
+
+      /* The white background content wrapper */
+      .container > .content {
+        background-color: #fff;
+        padding: 20px;
+        margin: 0 -20px; 
+        -webkit-border-radius: 10px 10px 10px 10px;
+           -moz-border-radius: 10px 10px 10px 10px;
+                border-radius: 10px 10px 10px 10px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+                box-shadow: 0 1px 2px rgba(0,0,0,.15);
+      }
+
+      .login-form { margin-left: 65px; }
+      #login h2 {
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 25px;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        margin-top: 0px;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+      }
+
+      #login .devise_links {
+        text-align: left;
+        font-size: 12px;
+        line-height: 25px;
+        padding-top: 5px;
+      }
+
+      #login .form-horizontal { border-bottom: 1px solid #eee; }
+      legend {
+        margin-right: -50px;
+        font-weight: bold;
+        color: #404040;
+      }
+
+    </style>
+
+</head>
+<body class="logged_out <%= controller.action_name %>">
+  <div class="container">
+    <div class="content">
+      <%= flash_notices %>
+      <div id="login">
+        <%= yield %>
+      </div>
+    </div>
+  </div> <!-- /container -->
+</body>
+</html>

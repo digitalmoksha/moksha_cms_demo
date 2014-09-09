@@ -1,0 +1,20 @@
+<h2><%= nls(:change_password_title) %></h2>
+
+<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), :method => :put, html: { class: 'form-horizontal' }, 
+        wrapper: :bs3_horizontal_nosize) do |f| %>
+  <%= field_set_tag  do %>
+    <%= devise_error_messages! %>
+    <%= f.hidden_field :reset_password_token %>
+
+    <%= f.input :password,              label: nls(:new_password),         required: true, label_html: {class: 'col-sm-4'}, input_wrapper_html: {class: 'col-sm-6'} %>
+    <%= f.input :password_confirmation, label: nls(:new_password_confirm), required: true, label_html: {class: 'col-sm-4'}, input_wrapper_html: {class: 'col-sm-6'} %>
+
+    <div class="form-group">
+      <div class='col-sm-offset-4 col-sm-6'>
+        <%= f.button :submit, nls(:change_password), class: 'btn-primary' %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+<%= render "links" %>

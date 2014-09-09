@@ -1,0 +1,31 @@
+<% content_for :content_title_extra do %>
+  <div class="header-bar-stats">
+    <div class="collapse" id="header-bar-stats">
+      <div class="well">
+        <ul class="page-stats">
+        </ul>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<div class="row">
+  <div class="col-md-6">
+    <%= render partial: 'dm_core/admin/dashboard/widget_recent_new_users' %>
+  </div>
+  <div class="col-md-6">
+    <%= render partial: 'dm_core/admin/dashboard/widget_recent_user_activity' %>
+  </div>
+</div>
+
+<% if can? :manage_content, :all %>
+  <div id="widget_blog_comments">
+    <%= render partial: 'dm_cms/admin/dashboard/widget_blog_comments' %>
+  </div>
+<% end %>
+
+<% if defined?(DmForum) && can?(:manage_forums, :all) %>
+  <div id="widget_forum_comments">
+    <%= render partial: 'dm_forum/admin/dashboard/widget_forum_comments' %>
+  </div>
+<% end %>

@@ -1,0 +1,16 @@
+<h2>Resend unlock instructions</h2>
+
+<%= simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { class: 'form-horizontal' }, 
+        wrapper: :bs3_horizontal_nosize) do |f| %>
+  <%= devise_error_messages! %>
+  <%= field_set_tag do %>
+    <%= f.input :email,    label: nls(:signup_email),    required: true, label_html: {class: 'col-sm-4'}, input_wrapper_html: {class: 'col-sm-6'} %>
+    <div class="form-group">
+      <div class='col-sm-offset-4 col-sm-6'>
+        <%= f.button :submit, "Resend unlock instructions", class: 'btn-primary' %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+<%= render "links" %>
