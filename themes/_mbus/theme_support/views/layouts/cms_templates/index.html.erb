@@ -1,6 +1,6 @@
-<%= render :partial => "layouts/cms_templates/page_header" %>
+<%= render partial: "layouts/cms_templates/page_header" %>
 
-<%= render :partial => "layouts/cms_templates/page_top", locals: {home_page: true} %>
+<%= render partial: "layouts/cms_templates/page_top", locals: {home_page: true} %>
 
   <%= content_by_name :slideshow %>
 
@@ -9,7 +9,7 @@
 
     <%= content_by_name :body %>
 
-    <%= render :partial => "layouts/cms_templates/page_footer" %>
+    <%= render partial: "layouts/cms_templates/page_footer" %>
 
   </div>
   <!-- /.container -->

@@ -19,9 +19,9 @@ GIT
       rails (>= 3.2.0)
 
 PATH
-  remote: /Users/walkerbl/Sites/In_Development/_github/_moksha_gems/admin_theme_londinium
+  remote: /Users/walkerbl/Sites/In_Development/_github/_moksha_gems/admin_theme_sbadmin2
   specs:
-    admin_theme_londinium (0.0.1)
+    admin_theme_sbadmin2 (0.0.1)
       rails (~> 4.0)
 
 PATH
@@ -385,7 +385,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  admin_theme_londinium!
+  admin_theme_sbadmin2!
   bcrypt (~> 3.1.7)
   better_errors (~> 1.1.0)
   binding_of_caller
