@@ -19,7 +19,7 @@ ThemesForRails.available_theme_names.each do |theme_name|
   end
   
   #--- add items listed in theme.yml to be pre-compiled in asset pipeline
-  if Rails.env.production?
+  if Rails.env.production? || Rails.env.staging?
     if theme_data and theme_data['precompile']
       Rails.application.config.assets.precompile += theme_data['precompile']
     end

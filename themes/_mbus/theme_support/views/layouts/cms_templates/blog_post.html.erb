@@ -24,8 +24,8 @@
         <p><i class="fa fa-clock-o"></i> Posted on <%= format_date @post.published_on %></p>
         <hr>
         <!-- Preview Image -->
-        <% unless @post.image.blank? %>
-          <%= site_media_image_tag @post.image, class: 'img-responsive' %>
+        <% unless @post.featured_image.blank? %>
+          <%= site_media_image_tag @post.featured_image, class: 'img-responsive' %>
           <hr>
         <% end %>
 

@@ -1,9 +1,9 @@
 <h2><%= link_to(post.title, post_show_url(post.cms_blog.slug, post.slug)) %></h2>
 <p class="lead">by <a href="#">Moksha CMS</a></p>
 <p><i class="fa fa-clock-o"></i> Posted on <%= format_date post.published_on %></p>
-<% unless post.image.blank? %>
+<% unless post.featured_image.blank? %>
   <hr>
-  <%= link_to site_media_image_tag(post.image, class: "img-responsive img-hover"), post_show_url(post.cms_blog.slug, post.slug) %>
+  <%= link_to site_media_image_tag(post.featured_image, class: "img-responsive img-hover"), post_show_url(post.cms_blog.slug, post.slug) %>
 <% end %>
 <hr>
 
