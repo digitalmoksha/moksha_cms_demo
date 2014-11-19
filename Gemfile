@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 #------------------------------------------------------------------------------
 
-gem 'rails', '4.1.5'
+gem 'rails', '4.1.8'
 gem "mysql2", ">= 0.3.15"
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
@@ -68,7 +68,7 @@ group :development, :test do
   gem 'ruby-growl', '~> 4.1'
   gem 'thin'  # use the Thin webserver during development
 
-  gem 'rspec-rails', '~> 3.0.2'
+  gem 'rspec-rails', '~> 3.1.0'
   gem 'factory_girl_rails', '~> 4.4.1'
   
   #--- Better Errors
@@ -82,8 +82,12 @@ group :development, :test do
 end
 
 group :test do
-  gem 'faker', '~> 1.4.2'
-  gem 'capybara', '~> 2.4.1'
-  gem 'database_cleaner', '~> 1.0.1'
+  gem 'sqlite3'
+  gem 'faker', '~> 1.4.3'
+  gem 'capybara', '~> 2.4.3'
+  gem 'database_cleaner', '~> 1.3.0'
   gem 'launchy', '~> 2.4.2'
+  gem 'selenium-webdriver', '~> 2.43.0'
+  gem 'rspec-formatter-webkit'
+  gem 'syntax'
 end
