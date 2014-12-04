@@ -6,5 +6,5 @@ begin
   end
   Rails.application.config.action_mailer.default_url_options = { :host => Rails.application.config.base_domain }
 rescue Exception => error
-  puts "Error initializing Basha: Issue processing config file #{config_file}.\n\nError is: #{error}"
+  puts "Error initializing System: Issue processing config file #{config_file}.\n\nError is: #{error}"
 end
