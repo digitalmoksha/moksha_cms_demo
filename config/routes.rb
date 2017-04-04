@@ -20,9 +20,9 @@ Rails.application.routes.draw do
     get   '/index',                 :controller => 'dm_cms/pages', :action => :show, :slug => 'index', :as  => :index
   end
 
-  # mount DmEvent::Engine,            :at => '/'
-  # mount DmForum::Engine,            :at => '/'
-  # mount DmNewsletter::Engine,       :at => '/'
+  mount DmEvent::Engine,            :at => '/'
+  mount DmForum::Engine,            :at => '/'
+  mount DmNewsletter::Engine,       :at => '/'
   mount DmCms::Engine,              :at => '/'
 
   #--- use match instead of root to fix issue where sometimes '?locale=de' is appeneded

@@ -14,3 +14,4 @@
 # ignore the database config
 /config/database.yml
 Gemfile.lock
+.byebug_history
